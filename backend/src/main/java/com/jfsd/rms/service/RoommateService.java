@@ -1,14 +1,14 @@
 package com.jfsd.rms.service;
 
 import com.jfsd.rms.dao.RoommateDAO;
-import com.jfsd.rms.daoimpl.RoommateDatabaseDAOImpl;
+import com.jfsd.rms.daoimpl.RoommateCacheDAOImpl;
 import com.jfsd.rms.model.RMSResponseModel;
 import com.jfsd.rms.model.Roommate;
 import com.jfsd.rms.util.RMSException;
 
 public class RoommateService {
 	
-	private RoommateDAO rmtDao = new RoommateDatabaseDAOImpl();
+	private RoommateDAO rmtDao = new RoommateCacheDAOImpl();
 	
 	public RMSResponseModel addRoommate(Roommate rmt) throws RMSException {
 		return rmtDao.addRoommate(rmt);

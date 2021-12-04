@@ -30,9 +30,9 @@ public class UpdateRoommate {
 			if (response.isStatus()) {
 				Roommate oldRmt = (Roommate) response.getResponseObject();
 				Roommate rmtEdit = new Roommate();
+				in.nextLine();
 				System.out.print("Enter Address: ");
 				String ad = in.nextLine();
-				in.nextLine();
 				System.out.print("Enter Mobile: ");
 				String mb = in.nextLine();
 

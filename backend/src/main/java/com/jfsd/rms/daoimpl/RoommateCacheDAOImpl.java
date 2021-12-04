@@ -58,6 +58,7 @@ public class RoommateCacheDAOImpl implements RoommateDAO {
 	
 	public RMSResponseModel getAllRoommates() throws RMSException {
 		RMSResponseModel response = new RMSResponseModel();
+		response.setStatus(true);
 		response.setResponseObject(rmtCache);
 		return response;
 	}

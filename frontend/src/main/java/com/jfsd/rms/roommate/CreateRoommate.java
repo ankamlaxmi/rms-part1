@@ -32,16 +32,29 @@ public class CreateRoommate {
 			System.out.print("Date Of Joining (in day-month-year): ");
 			LocalDate date = null;
 			String tdate = in.nextLine();
+			System.out.print("Vegiterian Yes/NO?: ");
+			String vegiterian = in.nextLine();
+			System.out.print("Email Address ");
+			String email = in.nextLine();
+			System.out.println("------------------");
+		
+			
+			
 			if (StringUtils.isNotBlank(tdate)) {
 				date = RMSUtil.validateAndParseDate(tdate);
 			} else {
 				date = LocalDate.now();
 			}
-			Roommate rmt = new Roommate(name, address, mobile, date);
+			
+			
+			
+			Roommate rmt = new Roommate(name, address, mobile, date,vegiterian,email);
 			RoommateController rmtController = new RoommateController();
 			RMSResponseModel response = rmtController.addRoommate(rmt);
+			
 			System.out.println(response.getResult());
 			System.out.println();
+			
 		} catch (Exception e) {
 			if (e.getSuppressed() != null && e.getSuppressed().length > 0) {
 				Throwable[] validations = e.getSuppressed();
